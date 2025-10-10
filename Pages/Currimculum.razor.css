@@ -1,0 +1,178 @@
+﻿/* 🌸 Barra superior */
+.menu-horizontal {
+    background: linear-gradient(90deg, #fda4af, #f9a8d4, #fbcfe8); /* rosita degradado */
+    color: white;
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 4px 15px rgba(240, 46, 170, 0.3);
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+    /* ✨ Brillo animado */
+    .menu-horizontal::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -80px;
+        width: 80px;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.25);
+        transform: skewX(-20deg);
+        animation: shine 3s infinite linear;
+    }
+
+@keyframes shine {
+    0% {
+        left: -80px;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+/* 💖 Nombre con ícono */
+.menu-horizontal h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+    .menu-horizontal h2 i {
+        color: #fff0f6;
+        background: rgba(255,255,255,0.3);
+        padding: 6px;
+        border-radius: 50%;
+        font-size: 18px;
+        box-shadow: 0 2px 5px rgba(255,255,255,0.3);
+    }
+
+/* 💕 Botones del menú */
+.menu-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+    .menu-buttons button {
+        background: linear-gradient(135deg, #fbcfe8, #f472b6, #ec4899);
+        color: white;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: 500;
+        letter-spacing: 0.3px;
+        transition: all 0.3s ease;
+        box-shadow: 0 3px 8px rgba(236, 72, 153, 0.4);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+        .menu-buttons button i {
+            font-size: 14px;
+        }
+
+        .menu-buttons button:hover {
+            background: linear-gradient(135deg, #f472b6, #d946ef);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 15px rgba(217, 70, 239, 0.5);
+        }
+
+/* 🌺 Contenido principal */
+.content {
+    padding: 60px 20px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffe4e6, #fce7f3, #f5d0fe);
+    min-height: 100vh;
+}
+
+/* 💫 Imagen circular con ícono decorativo */
+.foto {
+    position: relative;
+    display: inline-block;
+}
+
+    .foto img {
+        border-radius: 50%;
+        margin-bottom: 25px;
+        border: 5px solid #f9a8d4;
+        box-shadow: 0 5px 15px rgba(249, 168, 212, 0.6);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .foto i {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        background: #f472b6;
+        color: white;
+        padding: 8px;
+        border-radius: 50%;
+        box-shadow: 0 3px 8px rgba(236, 72, 153, 0.5);
+        font-size: 14px;
+    }
+
+    .foto img:hover {
+        transform: scale(1.08);
+        box-shadow: 0 8px 20px rgba(236, 72, 153, 0.5);
+    }
+
+/* 🌼 Caja de información */
+.info-box {
+    background: linear-gradient(145deg, #ffffff, #ffe4f0);
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.2);
+    width: 360px;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+    border: 2px solid #f9a8d4;
+    text-align: left;
+    position: relative;
+}
+
+    .info-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(236, 72, 153, 0.35);
+    }
+
+    /* 🌷 Ícono de la info-box */
+    .info-box h3 i {
+        color: #ec4899;
+        margin-right: 8px;
+    }
+
+    /* 🌸 Texto */
+    .info-box p {
+        color: #4b5563;
+        font-size: 15px;
+        line-height: 1.7;
+        margin-top: 15px;
+    }
+
+/* ✨ Fondo animado */
+body {
+    background: radial-gradient(circle at top left, #ffe4e6, #fbcfe8, #e9d5ff);
+    animation: bgPulse 6s infinite alternate;
+}
+
+@keyframes bgPulse {
+    0% {
+        background-position: left top;
+    }
+
+    100% {
+        background-position: right bottom;
+    }
+}

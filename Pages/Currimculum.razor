@@ -1,0 +1,70 @@
+﻿@page "/curriculum"
+
+@code {
+    private string InfoVisible = "nombre";
+
+    private void MostrarInfo(string info)
+    {
+        InfoVisible = info;
+    }
+}
+
+<!-- Barra superior -->
+<div class="menu-horizontal">
+    <h2><i class="fa-solid fa-star"></i> Menú</h2>
+    <div class="menu-buttons">
+        <button @onclick="@(() => MostrarInfo("nombre"))"><i class="fa-solid fa-user"></i> Nombre</button>
+        <button @onclick="@(() => MostrarInfo("telefono"))"><i class="fa-solid fa-phone"></i> Teléfono</button>
+        <button @onclick="@(() => MostrarInfo("correo"))"><i class="fa-solid fa-envelope"></i> Correo</button>
+        <button @onclick="@(() => MostrarInfo("direccion"))"><i class="fa-solid fa-map-marker-alt"></i> Dirección</button>
+        <button @onclick="@(() => MostrarInfo("experiencia"))"><i class="fa-solid fa-briefcase"></i> Experiencia</button>
+    </div>
+</div>
+
+<!-- Contenido -->
+<div class="content">
+    <div class="foto">
+        <img src="https://via.placeholder.com/160" alt="Foto de perfil" />
+        <i class="fa-solid fa-camera"></i>
+    </div>
+
+    @if (InfoVisible == "nombre")
+    {
+        <div class="info-box">
+            <h3><i class="fa-solid fa-user"></i> Nombre</h3>
+            <p>Ana Paola Walle Contreras</p>
+        </div>
+    }
+
+    @if (InfoVisible == "telefono")
+    {
+        <div class="info-box">
+            <h3><i class="fa-solid fa-phone"></i> Teléfono</h3>
+            <p>+52 312 123 4567</p>
+        </div>
+    }
+
+    @if (InfoVisible == "correo")
+    {
+        <div class="info-box">
+            <h3><i class="fa-solid fa-envelope"></i> Correo</h3>
+            <p>ana.paola@email.com</p>
+        </div>
+    }
+
+    @if (InfoVisible == "direccion")
+    {
+        <div class="info-box">
+            <h3><i class="fa-solid fa-map-marker-alt"></i> Dirección</h3>
+            <p>Colima, México</p>
+        </div>
+    }
+
+    @if (InfoVisible == "experiencia")
+    {
+        <div class="info-box">
+            <h3><i class="fa-solid fa-briefcase"></i> Experiencia</h3>
+            <p>3 años en desarrollo de software y proyectos de tecnología educativa.</p>
+        </div>
+    }
+</div>
