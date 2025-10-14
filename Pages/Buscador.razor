@@ -1,0 +1,36 @@
+﻿@page "/buscador"
+
+<div class="container">
+    <div class="search-indicator">🔍 Buscando...</div>
+
+    <div class="search-box">
+        <i class="fas fa-magnifying-glass"></i>
+        <input @bind="searchText" @bind:event="oninput"
+               @onkeypress="HandleKeyPress"
+               placeholder="Buscar algo..." />
+    </div>
+
+    <div class="result-box">
+        @if (string.IsNullOrWhiteSpace(searchText))
+        {
+            <p>Por favor escribe algo para buscar.</p>
+        }
+        else
+        {
+            <p>Resultados de la búsqueda para: <strong>@searchText</strong></p>
+        }
+    </div>
+</div>
+
+@code {
+    private string searchText = string.Empty;
+
+    private void HandleKeyPress(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter")
+        {
+            // Aquí podrías llamar un servicio real de búsqueda
+            Console.WriteLine($"Buscando: {searchText}");
+        }
+    }
+}

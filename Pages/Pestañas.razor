@@ -1,0 +1,50 @@
+﻿@page "/pestanas"
+
+<h3 style="text-align:center;">Ejemplo de Pestañas</h3>
+
+<div class="tab-container">
+    <div class="tabs">
+        <div class="tab tab1 @(activeTab == 1 ? "active" : "")"
+             @onclick="() => SetActiveTab(1)">
+            Pestaña 1
+        </div>
+        <div class="tab tab2 @(activeTab == 2 ? "active" : "")"
+             @onclick="() => SetActiveTab(2)">
+            Pestaña 2
+        </div>
+        <div class="tab tab3 @(activeTab == 3 ? "active" : "")"
+             @onclick="() => SetActiveTab(3)">
+            Pestaña 3
+        </div>
+    </div>
+
+    <div class="content-area"
+         style="background:@GetBackground(); border-top-left-radius:30px; border-top-right-radius:30px;">
+        @GetContent()
+    </div>
+</div>
+
+@code {
+    private int activeTab = 1;
+
+    private void SetActiveTab(int tab)
+    {
+        activeTab = tab;
+    }
+
+    private string GetContent() => activeTab switch
+    {
+        1 => "Contenido de la Pestaña 1",
+        2 => "Contenido de la Pestaña 2",
+        3 => "Contenido de la Pestaña 3",
+        _ => "Selecciona una pestaña"
+    };
+
+    private string GetBackground() => activeTab switch
+    {
+        1 => "var(--tab1-content)",
+        2 => "var(--tab2-content)",
+        3 => "var(--tab3-content)",
+        _ => "transparent"
+    };
+}

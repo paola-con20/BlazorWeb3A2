@@ -1,0 +1,85 @@
+﻿@page "/tablas"
+
+<div class="container">
+
+    <header class="top-area">
+        <div class="square top-left" aria-label="Recuadro izquierdo">
+            I
+        </div>
+
+        <div class="square top-right" aria-label="Recuadro derecho">
+            D
+        </div>
+    </header>
+
+    <section class="tables">
+        <div class="card">
+            <h3>Tabla A</h3>
+            <table aria-describedby="tabla-a">
+                <thead>
+                    <tr><th>ID</th><th>Nombre</th><th>Estado</th></tr>
+                </thead>
+                <tbody>
+                    @foreach (var fila in TablaA)
+                    {
+                        <tr>
+                            <td>@fila.Id</td>
+                            <td>@fila.Nombre</td>
+                            <td>@fila.Estado</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <h3>Tabla B</h3>
+            <table aria-describedby="tabla-b">
+                <thead>
+                    <tr><th>Clave</th><th>Descripción</th><th>Cantidad</th></tr>
+                </thead>
+                <tbody>
+                    @foreach (var fila in TablaB)
+                    {
+                        <tr>
+                            <td>@fila.Clave</td>
+                            <td>@fila.Descripcion</td>
+                            <td>@fila.Cantidad</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</div>
+
+@code {
+    public class FilaA
+    {
+        public int Id { get; set; }
+        public string Nombre { get; set; } = "";
+        public string Estado { get; set; } = "";
+    }
+
+    public class FilaB
+    {
+        public string Clave { get; set; } = "";
+        public string Descripcion { get; set; } = "";
+        public int Cantidad { get; set; }
+    }
+
+    private List<FilaA> TablaA = new()
+    {
+        new FilaA { Id = 1, Nombre = "Juan", Estado = "Activo" },
+        new FilaA { Id = 2, Nombre = "Ana", Estado = "Pendiente" },
+        new FilaA { Id = 3, Nombre = "Luis", Estado = "Inactivo" }
+    };
+
+    private List<FilaB> TablaB = new()
+    {
+        new FilaB { Clave = "A01", Descripcion = "Producto A", Cantidad = 5 },
+        new FilaB { Clave = "B02", Descripcion = "Producto B", Cantidad = 10 },
+        new FilaB { Clave = "C03", Descripcion = "Producto C", Cantidad = 2 }
+    };
+}

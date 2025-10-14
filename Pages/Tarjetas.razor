@@ -1,0 +1,44 @@
+﻿@page "/tarjetas-ovaladas"
+
+<h3 style="text-align:center;">Tarjetas Grandes con Imagen Ovalada</h3>
+
+<div class="container">
+    <section class="cards">
+        @foreach (var tarjeta in listaTarjetas)
+        {
+            <div class="card">
+                <img src="@tarjeta.Imagen" alt="@tarjeta.Titulo" />
+                <div class="card-content">
+                    <h3>@tarjeta.Titulo</h3>
+                    <p>@tarjeta.Descripcion</p>
+                </div>
+            </div>
+        }
+    </section>
+</div>
+
+@code {
+    public class Tarjeta
+    {
+        public string Titulo { get; set; }
+        public string Descripcion { get; set; }
+        public string Imagen { get; set; }
+
+        public Tarjeta(string titulo, string descripcion, string imagen)
+        {
+            Titulo = titulo;
+            Descripcion = descripcion;
+            Imagen = imagen;
+        }
+    }
+    private List<Tarjeta> listaTarjetas = new List<Tarjeta>
+    {
+        new Tarjeta("Título 1", "Descripción breve de la tarjeta número 1. Aquí va información relevante al lado de la imagen ovalada.", "https://via.placeholder.com/160"),
+        new Tarjeta("Título 2", "Otra descripción con texto para mostrar cómo se ajusta al diseño de la tarjeta con imagen ovalada.", "https://via.placeholder.com/160"),
+        new Tarjeta("Título 3", "Información adicional para la tarjeta 3, con detalles al lado de la imagen en forma ovalada.", "https://via.placeholder.com/160"),
+        new Tarjeta("Título 4", "Descripción complementaria de la tarjeta 4, demostrando la cuadrícula de varias tarjetas.", "https://via.placeholder.com/160"),
+        new Tarjeta("Título 5", "Ejemplo de tarjeta número 5, con diseño más amplio y elegante.", "https://via.placeholder.com/160"),
+        new Tarjeta("Título 6", "Contenido de la sexta tarjeta, manteniendo consistencia visual con el resto de elementos.", "https://via.placeholder.com/160")
+    };
+}
+

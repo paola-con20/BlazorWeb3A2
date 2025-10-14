@@ -1,0 +1,29 @@
+﻿.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .card img {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%; /* Hace la imagen ovalada/circular */
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+
+.card-content {
+    text-align: center;
+}

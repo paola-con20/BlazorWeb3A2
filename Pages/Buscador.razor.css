@@ -1,0 +1,65 @@
+﻿:root {
+    --primary: #6C63FF;
+    --accent: #FF7AA2;
+    --bg: #f6f7fb;
+    --card-bg: #ffffff;
+    --muted: #6b7280;
+}
+
+body {
+    font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    margin: 40px auto;
+}
+
+.search-indicator {
+    position: absolute;
+    top: -30px;
+    left: 0;
+    font-size: 1.5rem;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: var(--card-bg);
+    border-radius: 30px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 12px rgba(17,24,39,0.1);
+}
+
+    .search-box input {
+        flex: 1;
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .search-box i {
+        color: var(--primary);
+        font-size: 1.2rem;
+        margin-right: 10px;
+    }
+
+.result-box {
+    background: var(--card-bg);
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 6px 18px rgba(17,24,39,0.08);
+    min-height: 200px;
+}
+
+    .result-box p {
+        font-size: 1rem;
+        color: var(--muted);
+        line-height: 1.5;
+    }
